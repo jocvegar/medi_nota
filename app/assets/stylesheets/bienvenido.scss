@@ -1,3 +1,27 @@
-// Place all the styles related to the bienvenido controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    font-family: 'Open Sans', serif;
+    color: #6c757d;
+}
+
+.title-icon {
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 1.35rem;
+    a {
+        color: #868e96;
+        &:hover, &:active {
+            text-decoration: none;
+            color: #3569b7;
+        }
+    }
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 5.5em;
+	line-height: 60px;
+	background-color: #f5f5f5
+}
