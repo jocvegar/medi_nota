@@ -1,0 +1,37 @@
+<div class="row">
+	<div class="col-12 offset-sm-2 col-sm-8">
+		<%= f.input :primer_nombre, label: false, placeholder: 'Primer nombre' %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12 offset-sm-2 col-sm-8">
+		<%= f.input :segundo_nombre, label: false, placeholder: 'Segundo nombre' %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12 offset-sm-2 col-sm-8">
+		<%= f.input :primer_apellido, label: false, placeholder: 'Primer apellido' %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12 offset-sm-2 col-sm-8">
+		<%= f.input :segundo_nombre, label: false, placeholder: 'Segundo apellido' %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12 offset-sm-2 col-sm-8">
+		<%= f.input :email, label: false, placeholder: 'doctorsito@correo.com' %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-12 offset-sm-2 col-sm-8">
+		<%= f.input :password, label: false, placeholder: 'contraseña', hint: 'Por lo menos 6 caracteres' %>
+	</div>
+</div>
+<div class="row">
+	<div class="offset-6 col-6">
+		<%= f.button :submit, "Crear Cuenta",class: "btn btn-primary btn-block" %>
+	</div>
+</div>
+
+<%#= f.input :remember_me, inline_label: 'Yes, remember me' %>
