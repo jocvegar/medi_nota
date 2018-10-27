@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Note taking">
+    <meta name="author" content="Jose V">
     <title>Medinota</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%#= favicon_link_tag 'favicon.ico' %>
   </head>
 
   <body>
+    <%= render "shared/nav_bar" %>
     <%= yield %>
   </body>
 </html>
