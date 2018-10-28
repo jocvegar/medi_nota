@@ -46,4 +46,6 @@ Rails.application.configure do
 
   # Clearance
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  # Clearance Test
+  config.middleware.use Clearance::BackDoor
 end
