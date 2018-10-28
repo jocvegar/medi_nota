@@ -1,22 +1,29 @@
-<%= form_for :session, url: session_path do |form| %>
-  <div class="text-field">
-    <%= form.label :email %>
-    <%= form.text_field :email, type: 'email' %>
-  </div>
+<%= simple_form_for :session, url: session_path do |f| %>
+    <div class="row">
+        <div class="col-12 offset-sm-2 col-sm-8">
+            <%= f.input :email, type: 'email',label: false, placeholder: 'correo' %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 offset-sm-2 col-sm-8">
+            <%= f.input :password,label: false, placeholder: 'contraseña' %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 offset-sm-2 col-sm-8">
+            <%= f.input :remember_token, label: "Guardar?",
+                as: :boolean, checked_value: true, unchecked_value: false  %>
+        </div>
+    </div>
 
-  <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
 
-  <div class="submit-field">
-    <%= form.submit %>
-  </div>
+    <div class="row">
+        <div class="offset-6 col-6 offset-sm-4 col-sm-6">
+            <%= f.button :submit, "Crear Cuenta",class: "btn btn-primary btn-block" %>
+        </div>
+    </div>
 
-  <div class="other-links">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_magia_path %>
-    <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
-  </div>
+    <div class="other-links">
+        <%#= link_to t(".forgot_password"), new_password_path %>
+    </div>
 <% end %>

@@ -13,13 +13,19 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"></a>
+          <a class="nav-link" href="#">PlaceHolder</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Ingresar</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Salir</a>
+          <% if signed_in? %>
+            <%= link_to sign_out_path, class: "nav-link",
+              method: :delete, data:{ :confirm => 'Seguro?' } do %>
+              Salir
+            <% end %>
+          <% else %>
+            <%= link_to sign_in_path, class: "nav-link" do %>
+              Ingresar
+            <% end %>
+          <% end %>
         </li>
       </ul>
     </div>
