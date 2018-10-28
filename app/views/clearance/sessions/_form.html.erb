@@ -15,15 +15,14 @@
                 as: :boolean, checked_value: true, unchecked_value: false  %>
         </div>
     </div>
-
-
     <div class="row">
         <div class="offset-6 col-6 offset-sm-4 col-sm-6">
-            <%= f.button :submit, "Crear Cuenta",class: "btn btn-primary btn-block" %>
+            <%= f.button :submit, "Ingresar",class: "btn btn-primary btn-block" %>
         </div>
     </div>
-
-    <div class="other-links">
-        <%#= link_to t(".forgot_password"), new_password_path %>
+    <div class="row">
+        <div class="other-links pull-right">
+            <%= link_to t("Olvide contraseña"), new_password_path %>
+        </div>
     </div>
 <% end %>
