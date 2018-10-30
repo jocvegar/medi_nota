@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_27_224248) do
+ActiveRecord::Schema.define(version: 2018_10_30_021554) do
+
+  create_table "hospitals", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pacientes", force: :cascade do |t|
+    t.string "nombre"
+    t.integer "edad"
+    t.datetime "fecha_de_ingreso"
+    t.text "antecedentes"
+    t.text "diagnostico"
+    t.text "plan"
+    t.string "genero"
+    t.string "camilla"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "hospital_id"
+    t.index ["hospital_id"], name: "index_pacientes_on_hospital_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false

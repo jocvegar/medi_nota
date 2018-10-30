@@ -1,0 +1,31 @@
+<% provide(:title, "Pacientes") %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+
+      <div class="new-pacient mt-3">
+        <div class="row">
+          <div class="col-10 offset-1 col-md-8 offset-md-2">
+            <%= link_to new_hospital_paciente_path(hospital_id: @hospital.id),
+              class: "btn btn-primary btn-block" do %>
+              <span><i class="fa fa-plus-square" aria-hidden="true"></i></span>
+                Agregar nuevo paciente
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <hr>
+
+      <div class="pacientes">
+        <% if @pacientes.empty? %>
+          <h4>No hay pacientes aun</h4>
+        <% else %>
+          <% @pacientes.each do |paciente| %>
+            <%= paciente.nombre %>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'hospitals/index'
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
@@ -13,4 +14,10 @@ Rails.application.routes.draw do
 	get "/sign_up" => "clearance/users#new", as: "sign_up"
 	get 'bienvenido/index'
 	root 'bienvenido#index'
+
+
+  resources :hospitals, only: [:index] do
+    resources :pacientes
+  end
+
 end

@@ -1,0 +1,21 @@
+<% provide(:title, "Hospitales") %>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12 text-center">
+			<% @hospitals.each do |hospital| %>
+				<div class="new-pacient mt-5">
+					<div class="row">
+						<div class="col-10 offset-1 col-md-8 offset-md-2">
+							<%= link_to hospital_pacientes_path(hospital_id: hospital.id),
+								class: "btn btn-secondary btn-block" do %>
+								<span><i class="fa fa-hospital-o" aria-hidden="true"></i></span>
+								<%=  hospital.name %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
