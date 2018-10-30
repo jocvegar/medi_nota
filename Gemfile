@@ -39,6 +39,7 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'clearance', '~> 1.12', '>= 1.12.1'
 gem 'simple_form'
 gem "letter_opener", :group => :development
+gem 'friendly_id', '~> 5.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

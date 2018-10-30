@@ -54,7 +54,7 @@ class PacientesController < ApplicationController
     end
 
     def set_hospital
-      @hospital = Hospital.find(params[:hospital_id])
+      @hospital = Hospital.friendly.find(params[:hospital_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
