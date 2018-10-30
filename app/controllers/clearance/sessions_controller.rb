@@ -23,7 +23,7 @@ class Clearance::SessionsController < ApplicationController
 		sign_in(@user) do |status|
 			if status.success?
 				redirect_back_or url_after_create
-				flash[:notice] = "Bienvenido #{@user.primer_nombre}"
+				flash[:notice] = "Hola #{@user.primer_nombre}"
 			else
 				flash.now.notice = status.failure_message
 				render template: "clearance/sessions/new", status: :unauthorized

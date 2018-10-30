@@ -19,6 +19,7 @@ class Clearance::UsersController < ApplicationController
 		if @user.save
 			sign_in @user
 			redirect_back_or url_after_create
+			flash[:notice] = "Hola #{@user.primer_nombre}"
 		else
 			render template: "clearance/users/new"
 		end
