@@ -18,11 +18,11 @@ class PacientesController < ApplicationController
   end
 
   def create
-    @paciente = Paciente.new(paciente_params)
+    @paciente = @hospital.pacientes.build(paciente_params)
 
     respond_to do |format|
       if @paciente.save
-        format.html { redirect_to @paciente, notice: 'Paciente was successfully created.' }
+        format.html { redirect_to hospital_pacientes_path(@hospital), notice: 'Paciente creado!' }
       else
         format.html { render :new }
       end

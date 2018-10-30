@@ -1,12 +1,59 @@
 
-<%= simple_form_for(@paciente) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<%= simple_form_for paciente, url: hospital_pacientes_path(hospital_id: hospital.slug) do |f| %>
+	<%= f.error_notification %>
+	<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+	<div class="row">
+	    <div class="col-12 offset-sm-2 col-sm-8">
+	        <%= f.input :camilla %>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="col-12 offset-sm-2 col-sm-8">
+	        <%= f.input :nombre %>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="col-12 offset-sm-2 col-sm-8">
+	        <%= f.input :edad %>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="col-12 offset-sm-2 col-sm-8">
+	        <%= f.input :genero, collection: [ "Masculino", "Femenino"]%>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="col-12 offset-sm-2 col-sm-8">
+	        <%= f.input :fecha_de_ingreso, as: :date, html5: true, input_html: { value: DateTime.now } %>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="col-12 offset-sm-2 col-sm-8">
+	        <%= f.input :antecedentes %>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="col-12 offset-sm-2 col-sm-8">
+	        <%= f.input :diagnostico %>
+	    </div>
+	</div>
+	<div class="row">
+	    <div class="col-12 offset-sm-2 col-sm-8">
+	        <%= f.input :plan %>
+	    </div>
+	</div>
 
-  <div class="form-inputs">
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+	<div class="row">
+	    <div class="offset-6 col-6 offset-sm-4 col-sm-6">
+	        <%= f.button :submit, "Crear",class: "btn btn-primary btn-block" %>
+	    </div>
+	</div>
+
+	<div class="form-inputs">
+	</div>
+
+	<div class="form-actions">
+	</div>
+
 <% end %>
