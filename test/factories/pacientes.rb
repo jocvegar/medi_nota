@@ -8,5 +8,6 @@ FactoryBot.define do
     plan "MyText"
     genero "MyString"
     camilla "MyString"
+    association :hospital
   end
 end

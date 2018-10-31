@@ -9,7 +9,13 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+
+  ActiveRecord::Migitgration.check_pending!
+
+
   # Factory Bot helper methods:
   include FactoryBot::Syntax::Methods
   # require "clearance/test_unit"
 end
+
+Dir[Rails.root.join('test', 'support', '*.rb')].each { |f| require f }
