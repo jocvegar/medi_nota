@@ -1,4 +1,69 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_paciente_path(@paciente) %> |
-<%= link_to 'Back', pacientes_path %>
+<div class="container">
+	<div class="col-12 col-sm-8 offset-sm-2">
+		<div class="row info-row">
+			<div class="col-6">
+			    Camilla:
+			</div>
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		        <%= @paciente.camilla %>
+		    </div>
+		</div>
+		<div class="row info-row">
+			<div class="col-6">
+			    Nombre:
+			</div>
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		        <%= @paciente.nombre %>
+		    </div>
+		</div>
+		<div class="row info-row">
+			<div class="col-6">
+			    Edad:
+			</div>
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		        <%= @paciente.edad %>
+		    </div>
+		</div>
+		<div class="row info-row">
+			<div class="col-6">
+			    Genero:
+			</div>
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		        <%= @paciente.genero%>
+		    </div>
+		</div>
+		<div class="row info-row">
+			<div class="col-6">
+			    Fecha de Ingreso:
+			</div>
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		        <%= (@paciente.fecha_de_ingreso).strftime("%b %d %Y, %I:%M %p ") %>
+		    </div>
+		</div>
+		<div class="row info-row">
+			<div class="col-6">
+			    Antecedentes:
+			</div>
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		        <%= @paciente.antecedentes %>
+		    </div>
+		</div>
+		<div class="row info-row">
+			<div class="col-6">
+			    Diagnostíco:
+			</div>
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		        <%= @paciente.diagnostico %>
+		    </div>
+		</div>
+		<div class="row info-row">
+			<div class="col-6">
+			    Plan:
+			</div>
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		        <%= @paciente.plan %>
+		    </div>
+		</div>
+	</div>
+</div>

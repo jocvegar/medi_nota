@@ -3,8 +3,9 @@
 		<div>
 			<h2 class="sign-screen-title">Paciente Nuevo</h2>
 			<br>
+			<%= link_to 'Atras', hospital_pacientes_path(hospital_id: @hospital.slug), class: "pull-right" %>
+			<br>
 			<%= render 'form', paciente: @paciente, hospital: @hospital %>
 		</div>
-		<%= link_to 'Back', hospitals_index_path %>
 	</div>
 </div>
