@@ -33,7 +33,7 @@
 			    Genero:
 			</div>
 		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
-		        <%= @paciente.genero%>
+		        <%= @paciente.genero %>
 		    </div>
 		</div>
 		<div class="row info-row">
@@ -49,7 +49,7 @@
 			    Antecedentes:
 			</div>
 		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
-		        <%= @paciente.antecedentes %>
+		        <%= @paciente.antecedentes.empty? ? "N/A" : @paciente.antecedentes %>
 		    </div>
 		</div>
 		<div class="row info-row">
@@ -73,7 +73,7 @@
 			    Pendientes:
 			</div>
 		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
-		        <%= @paciente.pendientes.nil? ? "N/A" : @paciente.pendientes %>
+		        <%= @paciente.pendientes.empty? ? "N/A" : @paciente.pendientes %>
 		    </div>
 		</div>
 		<br>
