@@ -76,6 +76,14 @@
 		        <%= @paciente.pendientes %>
 		    </div>
 		</div>
+		<div class="row info-row">
+			<div class="col-6">
+			    Casa Comercial:
+			</div>
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		        <%= @paciente.casa_comercial %>
+		    </div>
+		</div>
 		<br>
 		<div class="btn-group d-flex" role="group" aria-label="editables">
 			<%= link_to dar_alta_hospital_paciente_path(hospital_id: @hospital.slug, id: @paciente.slug),
