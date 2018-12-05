@@ -1,10 +1,10 @@
 class PacientesController < ApplicationController
   before_action :require_login
-  before_action :set_paciente, only: [:show, :edit, :update, :destroy]
+  before_action :set_paciente, only: [:show, :edit, :update, :destroy, :dar_alta]
   before_action :set_hospital
 
   def index
-    @pacientes = @hospital.pacientes.order("created_at DESC")
+    @pacientes = @hospital.pacientes.order("created_at DESC").where(dar_alta: false)
   end
 
   def show
@@ -44,6 +44,13 @@ class PacientesController < ApplicationController
     @paciente.destroy
     respond_to do |format|
       format.html { redirect_to hospital_pacientes_path(@hospital), notice: 'Paciente eliminado.' }
+    end
+  end
+
+  def dar_alta
+    @paciente.update(dar_alta: true)
+    respond_to do |format|
+      format.html { redirect_to hospital_pacientes_path(@hospital), notice: 'Paciente dado de alta.' }
     end
   end
 

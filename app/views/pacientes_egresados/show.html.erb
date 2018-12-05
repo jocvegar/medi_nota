@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="container">
 	<div class="col-12 col-sm-8 offset-sm-2">
-		<%= link_to 'Atras', hospital_pacientes_path(hospital_id: @hospital.slug),
+		<%= link_to 'Atras', hospital_pacientes_egresados_path(hospital_id: @hospital.slug),
 			class: "pull-right" %>
 		<br>
 		<div class="row info-row">
@@ -71,22 +71,12 @@
 		<br>
 
 		<div class="btn-group d-flex" role="group" aria-label="editables">
-			<%= link_to dar_alta_hospital_paciente_path(hospital_id: @hospital.slug, id: @paciente.slug),
-				class: "btn btn-primary w-100", method: :post,
-				data: { confirm: "Dar de alta a #{@paciente.nombre} ?" } do %>
-			    Dar De Alta
-			<% end %>
-			<%= link_to edit_hospital_paciente_path(hospital_id: @hospital.slug, id: @paciente.slug),
-				class: "btn btn-light w-100" do %>
-			    Editar
+			<%= link_to ingresar_hospital_pacientes_egresado_path(hospital_id: @hospital.slug, id: @paciente.slug),
+				class: "btn btn-secondary w-100", method: :post,
+				data: { confirm: "Ingresar #{@paciente.nombre} ?" } do %>
+			    Ingresar nuevamente
 			<% end %>
 		</div>
-		<br>
-		<%= link_to hospital_paciente_path(hospital_id: @hospital.slug, id: @paciente.slug),
-			class: "pull-right", method: :delete,
-			data: { confirm: "Elimar a #{@paciente.nombre} ?" } do %>
-			<small>Borrar</small>
-		<% end %>
 	</div>
 </div>
 

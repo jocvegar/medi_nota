@@ -17,7 +17,15 @@ Rails.application.routes.draw do
 
 
   resources :hospitals, only: [:index] do
-    resources :pacientes
+    resources :pacientes do
+      member { post "dar_alta" }
+    end
+  end
+
+  resources :hospitals, only: [:index] do
+    resources :pacientes_egresados, only: [:index, :show] do
+      member { post "ingresar" }
+    end
   end
 
 end
