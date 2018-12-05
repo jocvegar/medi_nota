@@ -41,7 +41,7 @@
 			    Fecha de Ingreso:
 			</div>
 		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
-		        <%= (@paciente.fecha_de_ingreso).strftime("%b %d %Y, %I:%M %p ") %>
+		        <%= (@paciente.fecha_de_ingreso).strftime("%b %d, %Y") %>
 		    </div>
 		</div>
 		<div class="row info-row">
@@ -72,7 +72,7 @@
 		<div class="btn-group d-flex" role="group" aria-label="editables">
 			<%= link_to dar_alta_hospital_paciente_path(hospital_id: @hospital.slug, id: @paciente.slug),
 				class: "btn btn-primary w-100", method: :post,
-				data: { confirm: "Dar de alta a #{@paciente.nombre} ?" } do %>
+				data: { confirm: "Dar de alta a #{@paciente.nombre}?" } do %>
 				Dar De Alta
 			<% end %>
 			<%= link_to edit_hospital_paciente_path(hospital_id: @hospital.slug, id: @paciente.slug),
@@ -83,7 +83,7 @@
 		<br>
 		<%= link_to hospital_paciente_path(hospital_id: @hospital.slug, id: @paciente.slug),
 			class: "pull-right", method: :delete,
-			data: { confirm: "Elimar a #{@paciente.nombre} ?" } do %>
+			data: { confirm: "Elimar a #{@paciente.nombre}?" } do %>
 			<small>Borrar</small>
 		<% end %>
 	</div>

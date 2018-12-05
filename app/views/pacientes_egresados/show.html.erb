@@ -72,7 +72,7 @@
 		<div class="btn-group d-flex" role="group" aria-label="editables">
 			<%= link_to ingresar_hospital_pacientes_egresado_path(hospital_id: @hospital.slug, id: @paciente.slug),
 				class: "btn btn-secondary w-100", method: :post,
-				data: { confirm: "Ingresar #{@paciente.nombre} ?" } do %>
+				data: { confirm: "Ingresar #{@paciente.nombre}?" } do %>
 			    Ingresar nuevamente
 			<% end %>
 		</div>
