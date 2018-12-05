@@ -1,6 +1,8 @@
 class Paciente < ApplicationRecord
 	extend FriendlyId
 	friendly_id :slug_it, use: :slugged
+	# Gives an error on test when using custom slug soo to test uncomment the line below and comment out line above
+	# friendly_id :nombre, use: :slugged
 
 	belongs_to :hospital
 

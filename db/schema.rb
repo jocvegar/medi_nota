@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_05_040653) do
+ActiveRecord::Schema.define(version: 2018_12_05_053745) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2018_12_05_040653) do
     t.integer "hospital_id"
     t.string "slug"
     t.boolean "dar_alta", default: false
+    t.text "pendientes"
     t.index ["hospital_id"], name: "index_pacientes_on_hospital_id"
     t.index ["slug"], name: "index_pacientes_on_slug", unique: true
   end

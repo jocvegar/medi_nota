@@ -68,6 +68,14 @@
 		        <%= @paciente.plan %>
 		    </div>
 		</div>
+		<div class="row info-row">
+			<div class="col-6">
+			    Pendientes:
+			</div>
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		        <%= @paciente.pendientes.nil? ? "N/A" : @paciente.pendientes %>
+		    </div>
+		</div>
 		<br>
 		<div class="btn-group d-flex" role="group" aria-label="editables">
 			<%= link_to ingresar_hospital_pacientes_egresado_path(hospital_id: @hospital.slug, id: @paciente.slug),
