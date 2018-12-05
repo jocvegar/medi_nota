@@ -10,6 +10,9 @@ class Paciente < ApplicationRecord
 
 	before_save :make_slug_pleasing
 
+	scope :ingresados, lambda { where('dar_alta = ?', false).order("created_at DESC") }
+	scope :egresados, lambda { where('dar_alta = ?', true).order("created_at DESC") }
+
 
 	private
 
