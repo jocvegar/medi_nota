@@ -4,7 +4,7 @@ class PacientesController < ApplicationController
   before_action :set_hospital
 
   def index
-    @pacientes = @hospital.pacientes.all
+    @pacientes = @hospital.pacientes.order("created_at DESC")
   end
 
   def show
@@ -32,7 +32,8 @@ class PacientesController < ApplicationController
   def update
     respond_to do |format|
       if @paciente.update(paciente_params)
-        format.html { redirect_to @paciente, notice: 'Paciente was successfully updated.' }
+        format.html { redirect_to hospital_paciente_path(hospital_id: @hospital.slug, id: @paciente.slug),
+            notice: 'Paciente actualizado!' }
       else
         format.html { render :edit }
       end
@@ -42,15 +43,14 @@ class PacientesController < ApplicationController
   def destroy
     @paciente.destroy
     respond_to do |format|
-      format.html { redirect_to pacientes_url, notice: 'Paciente was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to hospital_pacientes_path(@hospital), notice: 'Paciente eliminado.' }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_paciente
-      @paciente = Paciente.find(params[:id])
+      @paciente = Paciente.friendly.find(params[:id])
     end
 
     def set_hospital

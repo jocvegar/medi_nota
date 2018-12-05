@@ -1,6 +1,12 @@
-<h1>Editing Paciente</h1>
-
-<%= render 'form', paciente: @paciente %>
-
-<%= link_to 'Show', @paciente %> |
-<%= link_to 'Back', pacientes_path %>
+<div class="container">
+	<div class="col-12">
+		<div>
+			<h2 class="sign-screen-title">Editar Paciente</h2>
+			<br>
+			<%= link_to 'Atras', hospital_paciente_path(hospital_id: @hospital.slug, id: @paciente.slug),
+				class: "pull-right" %>
+			<br>
+			<%= render 'edit_form', paciente: @paciente, hospital: @hospital %>
+		</div>
+	</div>
+</div>

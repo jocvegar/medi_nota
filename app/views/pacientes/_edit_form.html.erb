@@ -1,5 +1,4 @@
-
-<%= simple_form_for paciente, url: hospital_pacientes_path(hospital_id: @hospital.slug) do |f| %>
+<%= simple_form_for paciente, url: hospital_paciente_path(hospital_id: @hospital.slug) do |f| %>
 	<%= f.error_notification %>
 	<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 	<div class="row">
@@ -24,7 +23,7 @@
 	</div>
 	<div class="row">
 	    <div class="col-12 offset-sm-2 col-sm-8">
-	        <%= f.input :fecha_de_ingreso, input_html: { value: DateTime.now }, as: :date, html5: true %>
+	        <%= f.input :fecha_de_ingreso, as: :date, html5: true %>
 	    </div>
 	</div>
 	<div class="row">
@@ -45,7 +44,7 @@
 
 	<div class="row">
 	    <div class="offset-6 col-6 offset-sm-4 col-sm-6">
-	        <%= f.button :submit, "Crear",class: "btn btn-primary btn-block" %>
+	        <%= f.button :submit, "Editar",class: "btn btn-primary btn-block" %>
 	    </div>
 	</div>
 

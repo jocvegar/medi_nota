@@ -2,68 +2,87 @@
 <div class="container">
 	<div class="col-12 col-sm-8 offset-sm-2">
 		<div class="row info-row">
-			<div class="col-6">
+			<div class="col-3 col-sm-3">
 			    Camilla:
 			</div>
-		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		    <div class="col-9 col-sm-9">
 		        <%= @paciente.camilla %>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-6">
+			<div class="col-3 col-sm-3">
 			    Nombre:
 			</div>
-		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		    <div class="col-9 col-sm-9">
 		        <%= @paciente.nombre %>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-6">
+			<div class="col-3 col-sm-3">
 			    Edad:
 			</div>
-		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		    <div class="col-9 col-sm-9">
 		        <%= @paciente.edad %>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-6">
+			<div class="col-3 col-sm-3">
 			    Genero:
 			</div>
-		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		    <div class="col-9 col-sm-9">
 		        <%= @paciente.genero%>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-6">
+			<div class="col-3 col-sm-3">
 			    Fecha de Ingreso:
 			</div>
-		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
-		        <%= (@paciente.fecha_de_ingreso).strftime("%b %d %Y, %I:%M %p ") %>
+		    <div class="col-9 col-sm-9">
+		        <%= (@paciente.fecha_de_ingreso).strftime("%b %d, %Y") %>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-6">
+			<div class="col-3 col-sm-3">
 			    Antecedentes:
 			</div>
-		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		    <div class="col-9 col-sm-9">
 		        <%= @paciente.antecedentes %>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-6">
+			<div class="col-3 col-sm-3">
 			    Diagnostíco:
 			</div>
-		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		    <div class="col-9 col-sm-9">
 		        <%= @paciente.diagnostico %>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-6">
+			<div class="col-3 col-sm-3">
 			    Plan:
 			</div>
-		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
+		    <div class="col-9 col-sm-9">
 		        <%= @paciente.plan %>
 		    </div>
 		</div>
+		<br>
+
+		<div class="btn-group d-flex" role="group" aria-label="editables">
+			<%= link_to "#", class: "btn btn-primary w-100" do %>
+			    Dar De Alta
+			<% end %>
+			<%= link_to edit_hospital_paciente_path(hospital_id: @hospital.slug, id: @paciente.slug),
+				class: "btn btn-light w-100" do %>
+			    Editar
+			<% end %>
+		</div>
+		<br>
+		<%= link_to hospital_paciente_path(hospital_id: @hospital.slug, id: @paciente.slug),
+			class: "pull-right", method: :delete,
+			data: { confirm: "Elimar a #{@paciente.nombre} ?" } do %>
+			<small>Borrar</small>
+		<% end %>
 	</div>
 </div>
+
+
