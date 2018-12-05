@@ -5,71 +5,70 @@
 			class: "pull-right" %>
 		<br>
 		<div class="row info-row">
-			<div class="col-3 col-sm-3">
+			<div class="col-6">
 			    Camilla:
 			</div>
-		    <div class="col-9 col-sm-9">
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
 		        <%= @paciente.camilla %>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-3 col-sm-3">
+			<div class="col-6">
 			    Nombre:
 			</div>
-		    <div class="col-9 col-sm-9">
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
 		        <%= @paciente.nombre %>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-3 col-sm-3">
+			<div class="col-6">
 			    Edad:
 			</div>
-		    <div class="col-9 col-sm-9">
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
 		        <%= @paciente.edad %>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-3 col-sm-3">
+			<div class="col-6">
 			    Genero:
 			</div>
-		    <div class="col-9 col-sm-9">
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
 		        <%= @paciente.genero%>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-3 col-sm-3">
+			<div class="col-6">
 			    Fecha de Ingreso:
 			</div>
-		    <div class="col-9 col-sm-9">
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
 		        <%= (@paciente.fecha_de_ingreso).strftime("%b %d, %Y") %>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-3 col-sm-3">
+			<div class="col-6">
 			    Antecedentes:
 			</div>
-		    <div class="col-9 col-sm-9">
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
 		        <%= @paciente.antecedentes %>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-3 col-sm-3">
+			<div class="col-6">
 			    Diagnostíco:
 			</div>
-		    <div class="col-9 col-sm-9">
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
 		        <%= @paciente.diagnostico %>
 		    </div>
 		</div>
 		<div class="row info-row">
-			<div class="col-3 col-sm-3">
+			<div class="col-6">
 			    Plan:
 			</div>
-		    <div class="col-9 col-sm-9">
+		    <div class="col-12 offset-sm-2 col-sm-8 pl-5">
 		        <%= @paciente.plan %>
 		    </div>
 		</div>
 		<br>
-
 		<div class="btn-group d-flex" role="group" aria-label="editables">
 			<%= link_to ingresar_hospital_pacientes_egresado_path(hospital_id: @hospital.slug, id: @paciente.slug),
 				class: "btn btn-secondary w-100", method: :post,
@@ -79,5 +78,3 @@
 		</div>
 	</div>
 </div>
-
-
