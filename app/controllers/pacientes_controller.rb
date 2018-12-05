@@ -4,7 +4,7 @@ class PacientesController < ApplicationController
   before_action :set_hospital
 
   def index
-    @pacientes = @hospital.pacientes.where(dar_alta: false).order("created_at DESC")
+    @pacientes = @hospital.pacientes.ingresados
   end
 
   def show
